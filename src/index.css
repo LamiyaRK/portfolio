@@ -1,5 +1,300 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-   themes: light --default;
+   themes: dark --default;
  }
+
+.send {
+  font-family: inherit;
+  font-size: 20px;
+  background:#019d91;
+  color: white;
+  padding: 0.4em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.send span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.send svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.send:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.send:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.send:hover span {
+  transform: translateX(5em);
+}
+
+.send:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+/* From Uiverse.io by AngelSg444734 */ 
+/*Create cart*/
+.main_container {
+  padding-top: 3%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.up {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+.down {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.card1 {
+  padding-left: 1.3em;
+  width: 90px;
+  height: 90px;
+  outline: 5px solid red;
+  border: none;
+  background: rgb(30, 30, 30);
+  border-radius: 90px 5px 5px 5px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: all 0.2s;
+}
+.card2 {
+  padding-left: 1em;
+  width: 90px;
+  height: 90px;
+  outline: 5px solid rgb(0, 166, 255);
+  border: none;
+  background: rgb(30, 30, 30);
+  border-radius: 5px 90px 5px 5px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: all 0.2s;
+}
+.card3 {
+  padding-left: 30px;
+  padding-bottom: 20px;
+  width: 90px;
+  height: 90px;
+  outline: 5px solid rgb(93, 250, 255);
+  border: none;
+  background: rgb(30, 30, 30);
+  border-radius: 5px 5px 5px 90px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: all 0.2s;
+}
+.card4 {
+ padding-left: 1.5em;
  
+  width: 90px;
+  height: 90px;
+  outline: 5px solid rgb(217, 0, 255);
+  border: none;
+  background: rgb(30, 30, 30);
+  border-radius: 5px 5px 90px 5px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: all 0.2s;
+}
+
+/*Change icons color*/
+.card1:hover .youtube {
+  fill: red;
+}
+
+.card1:hover .youtube_center_Icon {
+  fill: rgb(255, 255, 255);
+}
+
+.card2:hover .discord {
+  fill: rgb(43, 85, 255);
+}
+
+.card3:hover .twitter {
+  fill: rgb(139, 251, 255);
+}
+
+.card4:hover .twitch {
+  fill: rgb(225, 52, 255);
+}
+
+/*Change background color icons*/
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background: rgb(161, 0, 0);
+}
+
+.card2:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background: rgb(0, 40, 198);
+}
+
+.card3:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background: rgb(0, 160, 166);
+}
+
+.card4:hover {
+  cursor: pointer;
+  scale: 1.1;
+  background: rgb(169, 0, 199);
+}
+.shiny-text {
+  background: linear-gradient(90deg, #0ff, #fff, #0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s infinite linear;
+  font-weight: bold;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+.slick-dots.slick-thumb li {
+  width: 50px !important;
+  height: 50px !important;
+  margin: 0 px;
+}
+.git {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.git .text {
+  color: white;
+  font-weight: 500;
+  font-size: 0.9em;
+  transition: 400ms;
+}
+
+.git svg path {
+  transition: 400ms;
+}
+
+.git:hover {
+  background-color: transparent;
+}
+
+.git:hover .text {
+  color: #181717;
+}
+
+.git:hover svg path {
+  fill: #181717;
+}
+.social-links,.flex-center {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.social-btn {
+  
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  background: black;
+  margin: 5px;
+  transition: 0.3s;
+  justify-content: center;
+}
+
+.social-btn svg {
+  height: 24px;
+  width: 24px;
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: 0.3s;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.social-btn:hover {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.social-btn:hover span {
+  padding: 2px;
+  width: 80px;
+}
+
+#facebook svg {
+  fill: #1da1f2;
+}
+
+#linkedin svg {
+  fill: #0e76a8;
+}
+
+#github {
+  fill: #333;
+}
+

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { use, useEffect } from 'react';
 
 import Lottie from 'lottie-react';
 import Banner from './Banner';
@@ -11,9 +11,15 @@ import Bootcamps from './Bootcamps';
 import ArtifactsCarousel from './ArtifactsCarousel';
 import FeaturedProject from './FeaturedProject';
 import Contact from './Contact';
+import { ScrollContext } from './ScrollContext';
+
+
+
 
 
 const Home = () => {
+    
+  const {Home}=use(ScrollContext)
      useEffect(()=>{
       Aos.init({
         duration:800,
@@ -21,18 +27,22 @@ const Home = () => {
       })
      },[])
     return (
-        <div className='relative'>
+        <div className='relative' ref={Home} id="Home">
         
            
-           <div data-aos="fade-up" className='absolute z-1 top-40 inset-0'>
-<Banner data-aos="fade-up" className='relative'></Banner>
+           <div data-aos="fade-up" data-aos-duration="1000" className='absolute z-1 top-40 inset-0'>
+<Banner ></Banner>
+
 <Aboutme></Aboutme>
 <Skills></Skills>
 <Education></Education>
-<Bootcamps></Bootcamps>
+
 
 <FeaturedProject></FeaturedProject>
-<Contact></Contact>
+<Contact ></Contact>
+  <br></br>
+  <br></br>
+  <br></br>
            </div>
            
              

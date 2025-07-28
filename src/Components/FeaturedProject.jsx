@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { use } from 'react';
 import ProjectCard from './ProjectCard';
-
+import { ScrollContext } from './ScrollContext';
+import { motion } from 'framer-motion';
 const FeaturedProject = () => {
     const projectsData = [
+      {
+  id: 1,
+  name: "Earnify",
+  image1: "/earnify/arti.png",
+  image: "earnify",
+  technologies: [
+    "React", 
+    "MongoDB", 
+    "ExpressJS", 
+    "Firebase Auth", 
+    "JWT Auth", 
+    "Stripe", 
+    "aos",
+    "Tailwind CSS", 
+   
+    "imgBB"
+  ],
+  description: "A micro-tasking and earning platform with role-based dashboards for Workers, Buyers, and Admins. Users can create tasks, submit work, earn coins, and withdraw money. Buyers can manage tasks, pay workers, and admins oversee all platform activities.",
+  liveLink: "https://microjob-126da.web.app/", 
+  githubLink: "https://github.com/LamiyaRK/earnify-client",  
+  challenges: [
+    "Implementing secure role-based authorization using Firebase & JWT middleware",
+    "Designing a dynamic coin-based payment and withdrawal logic",
+    "Building notification systems and task-review workflows with real-time status updates",
+    "Integrating Stripe for purchasing coins and handling business logic for platform earnings"
+  ],
+  improvements: [
+    "Add filtering options for task status, category, and coin range",
+    "Integrate email notifications for task approvals, rejections, and withdrawals",
+    "Improve admin panel with advanced analytics and search",
+    "Add pagination and search functionality to all list-based pages"
+  ]
+}
+,
   {
-    id: 1,
+    id: 2,
     name: "Relicrader",
+    image1:"/artifact/arti.png",
     image: "artifact",
     technologies: ["React", "MongoDB", "Firebase", "ExpressJS","JWT Auth","Framer Motion","Tailwind CSS"],
     description: "A digital archive where users can add, edit, delete, and favorite historical artifacts. Designed to showcase culturally significant items with image previews, detailed descriptions, and name-based filtering for an immersive exploration experience.",
@@ -23,8 +59,9 @@ const FeaturedProject = () => {
     ]
   },
   {
-    id: 2,
+    id: 3,
     name: "Verdantia",
+    image1:"/garden/arti.png",
     image: "garden",
      technologies: ["React", "MongoDB", "Firebase", "ExpressJS","Tailwind CSS"],
     description: "A vibrant platform where gardeners can add, update, and share their planting tips. Users can browse community-submitted advice, stay updated with the latest gardening insights, and engage with helpful content organized by difficutly type.",
@@ -41,32 +78,25 @@ const FeaturedProject = () => {
       "Add “like” functionality to encourage community engagement and highlight popular tips"
     ]
   },
-  {
-    id: 3,
-    name: "Billencia",
-    image: "bill",
-     technologies: ["React", "Firebase","Tailwind CSS"],
-    description: "A portfolio management tool where developers can add, edit, or delete skills, projects, and experiences through a protected dashboard.",
-    liveLink: "https://billing-system-1101a.web.app/",
-    githubLink: "https://github.com/LamiyaRK/Billing",
-    challenges: [
-      "Setting up and managing authentication using Firebase",
-      "Implementing private routes to restrict access based on login state",
-      "Managing global state efficiently with React Context API"
-    ],
-    improvements: [
-      "Add the ability to mark payments as completed and track payment history",
-      "Enable user profile updates for personalized billing experiences",
-      "Implement accurate total balance calculations across all bills and payments"
-    ]
-  }
+ 
 ];
-
+const {Projects}=use(ScrollContext)
 
 
     return (
         <div >
-        <h1 className='text-4xl text-[#019d91]  text-center font-bold mt-[80px]'>Featured Projects</h1>
+         <motion.h1
+  ref={Projects}
+  initial={{ opacity: 0, y: -50, scale: 0.9 }}
+  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{ duration: 2, ease: "easeOut" }}
+  viewport={{ once: true }}
+  id="Projects"
+  className="text-5xl text-[#66FCF1] mb-5 text-center font-bold mt-[120px]"
+  loop
+>
+  Featured Projects
+</motion.h1>
         {
             projectsData.map(project=> <ProjectCard data={project}></ProjectCard>)
         }

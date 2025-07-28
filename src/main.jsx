@@ -8,6 +8,7 @@ import {
 } from "react-router";
 import Homelayout from './Components/Homelayout.jsx';
 import Home from './Components/Home.jsx';
+import ScrollProvider from './Components/ScrollProvider.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,9 +26,10 @@ const router = createBrowserRouter([
   },
 ]);
 createRoot(document.getElementById('root')).render(
-  
+  <ScrollProvider>
   <StrictMode>
    <RouterProvider router={router}/>
-  </StrictMode>,
+  </StrictMode>
+  </ScrollProvider>,
  
 )
